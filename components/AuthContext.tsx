@@ -4,7 +4,7 @@ import { User } from '../types';
 
 interface AuthContextType {
   user: User | null;
-  login: (login: string, pass: string) => boolean;
+  login: (login: string, pass: string) => Promise<boolean>;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -19,8 +19,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser(db.currentUser);
   }, []);
 
-  const login = (login: string, pass: string) => {
-    const success = db.login(login, pass);
+  const login = async (login: string, pass: string) => {
+    const success = await db.login(login, pass);
     if (success) {
       setUser(db.currentUser);
     }

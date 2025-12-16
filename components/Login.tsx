@@ -11,12 +11,18 @@ export const Login: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (login(username, password)) {
-      navigate('/');
-    } else {
-      setError('Credenciais inválidas. Verifique usuário e senha.');
+    setError('');
+    try {
+      const ok = await login(username, password);
+      if (ok) {
+        navigate('/');
+      } else {
+        setError('Credenciais inválidas. Verifique usuário e senha.');
+      }
+    } catch (err) {
+      setError('Erro ao tentar autenticar. Verifique a conexão.');
     }
   };
 
