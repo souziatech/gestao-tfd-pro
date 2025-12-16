@@ -1,0 +1,5 @@
+{
+  "name": "SUPABASE_of Gestão TFD Pro Municipal",
+  "description": "Sistema completo para gestão de Tratamento Fora de Domicílio, controlando viagens, pacientes, acompanhantes, veículos e emissão de passagens.",
+  "requestFramePermissions": []
+}

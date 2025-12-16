@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestão TFD Pro Municipal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Global Inputs Fix */
+      input[type="date"], input[type="time"] {
+        color-scheme: light; /* Força ícones escuros mesmo se o sistema estiver em dark mode */
+      }
+
+      /* Estilização específica para os ícones seletores (Webkit/Chrome/Edge/Safari) */
+      input[type="date"]::-webkit-calendar-picker-indicator,
+      input[type="time"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        opacity: 0.6; /* Deixa um pouco mais suave, mas visível */
+        filter: invert(0); /* Garante que seja preto/escuro */
+        padding: 4px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      /* Efeito Hover para destacar quando o mouse passa por cima */
+      input[type="date"]::-webkit-calendar-picker-indicator:hover,
+      input[type="time"]::-webkit-calendar-picker-indicator:hover {
+        opacity: 1;
+        background-color: #cbd5e1; /* slate-300 - destaca do fundo slate-50 */
+        transform: scale(1.1);
+      }
+
+      @media print {
+        @page { margin: 1cm; size: landscape; }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        
+        /* Reset layout for printing to avoid cut-off content */
+        aside, nav, header { display: none !important; }
+        main { 
+            margin: 0 !important; 
+            padding: 0 !important; 
+            width: 100% !important; 
+            height: auto !important; 
+            overflow: visible !important;
+            margin-left: 0 !important;
+        }
+        div, table, tbody, tr, td {
+            page-break-inside: avoid;
+        }
+        
+        /* Ticket specific print styles */
+        .ticket-page {
+          page-break-inside: avoid;
+          border: 1px dashed #000;
+          margin-bottom: 20px;
+        }
+      }
+      .print-only {
+        display: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "lucide-react": "https://esm.sh/lucide-react@0.263.1",
+    "recharts": "https://esm.sh/recharts@2.12.3?external=react,react-dom",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
+    "xlsx": "https://esm.sh/xlsx@0.18.5",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@3.8.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "vite": "https://esm.sh/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.88.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

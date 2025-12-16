@@ -1,0 +1,40 @@
+
+version: '3.8'
+
+services:
+  # O Frontend (React + Nginx)
+  app:
+    build: .
+    container_name: tfd_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  # O Banco de Dados (PostgreSQL)
+  db:
+    image: postgres:15-alpine
+    container_name: tfd_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secure_password_change_me
+      POSTGRES_DB: tfd_pro_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432" # Opcional: expor apenas se for acessar externamente
+
+  # Interface visual para gerenciar o banco (Opcional, mas útil)
+  adminer:
+    image: adminer
+    container_name: tfd_adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
