@@ -54,7 +54,26 @@ Passos realizados para disponibilizar a aplicação em produção no Vercel:
 
 URL de produção (exemplo do deploy que fiz): https://gestao-tfd-pro.vercel.app
 
-Se preferir, posso automatizar deploys via Git (GitHub/GitLab) e configurar deploys automáticos por PRs/branches.
+---
+
+## Autenticação com Supabase Auth (implementado)
+
+O sistema agora usa o Supabase Auth para autenticação (login por email/senha).
+
+Para ativar o login com o usuário de teste, siga estes passos no painel do Supabase:
+
+1. Acesse o seu projeto em https://app.supabase.com → Auth → Users.
+2. Clique em **New user** e crie um usuário com:
+   - Email: `admin@example.com`
+   - Password: `admin123`
+3. Após criar o usuário no Auth, abra o app em produção e faça login usando o email e a senha acima.
+
+O fluxo implementado é:
+- Login usa `supabase.auth.signInWithPassword({ email, password })`;
+- Após autenticação, o app procura um perfil em `users` (pela coluna `auth_uid` ou `email`) e, se não existir, cria um perfil básico.
+
+> Segurança: remova o seed de teste (`admin@example.com` / `admin123`) após criar suas contas reais. Para produção, recomendo usar Supabase Auth + políticas RLS mais estritas (já habilitei uma base, mas ajuste conforme seu fluxo).
+
 
 ---
 
