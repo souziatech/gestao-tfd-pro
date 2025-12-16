@@ -5,7 +5,7 @@ import { HeartPulse, Lock, User, ArrowRight } from 'lucide-react';
 import { db } from '../services/store';
 
 export const Login: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
@@ -15,7 +15,7 @@ export const Login: React.FC = () => {
     e.preventDefault();
     setError('');
     try {
-      const ok = await login(username, password);
+      const ok = await login(email, password);
       if (ok) {
         navigate('/');
       } else {
@@ -69,15 +69,15 @@ export const Login: React.FC = () => {
 
             <form onSubmit={handleLogin} className="space-y-6">
                 <div>
-                    <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Usuário / Login</label>
+                    <label className="block text-xs font-bold text-slate-500 uppercase mb-2">Email</label>
                     <div className="relative">
                         <User className="absolute left-3 top-3 text-slate-400" size={18} />
                         <input 
-                            type="text" 
+                            type="email" 
                             className="w-full border border-slate-200 bg-slate-50 rounded-lg py-3 pl-10 pr-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all"
-                            placeholder="Seu usuário de acesso"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="seu@email.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                 </div>

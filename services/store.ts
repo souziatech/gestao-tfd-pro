@@ -353,19 +353,57 @@ class Store {
   }
 
   // --- AUTH ---
-  async login(login: string, pass: string): Promise<boolean> {
-      // Modo simplificado: Consulta tabela 'users' customizada
-      // Em produção real, usar: await supabase.auth.signInWithPassword(...)
+  async login(emailOrLogin: string, pass: string): Promise<boolean> {
+      // Prefer using Supabase Auth when online
       if (this.isOnline) {
-          const { data } = await supabase.from('users').select('*').eq('login', login).eq('password', pass).single();
-          if (data) {
-              this.currentUser = data;
-              localStorage.setItem('tfd_session_user', data.id);
-              return true;
+          try {
+              // Attempt to sign in via Supabase Auth with email
+              const { data: authData, error: authError } = await supabase.auth.signInWithPassword({ email: emailOrLogin, password: pass });
+              if (authError || !authData?.user) {
+                  return false;
+              }
+
+              const authUid = authData.user.id;
+
+              // Try to find a profile linked by auth_uid or email
+              const { data: profile } = await supabase.from('users').select('*').or(`auth_uid.eq.${authUid},email.eq.${emailOrLogin}`).limit(1).single();
+
+              if (profile) {
+                  // If profile exists but doesn't have auth_uid, link it
+                  if (!profile.auth_uid) {
+                      await supabase.from('users').update({ auth_uid: authUid }).eq('id', profile.id);
+                      profile.auth_uid = authUid;
+                  }
+                  this.currentUser = profile as any;
+                  localStorage.setItem('tfd_session_user', profile.id);
+                  return true;
+              } else {
+                  // Create a basic profile row for the authenticated user
+                  const newUser = {
+                      id: Date.now().toString(),
+                      name: emailOrLogin.split('@')[0],
+                      login: emailOrLogin.split('@')[0],
+                      email: emailOrLogin,
+                      auth_uid: authUid,
+                      role: 'ATTENDANT',
+                      permissions: getPermissionsByRole(UserRole.ATTENDANT) as any
+                  } as any;
+
+                  const { error: insertError } = await supabase.from('users').insert(newUser);
+                  if (!insertError) {
+                      this.currentUser = newUser as any;
+                      this.users.push(newUser as any);
+                      localStorage.setItem('tfd_session_user', newUser.id);
+                      return true;
+                  }
+              }
+          } catch (e) {
+              console.error('Login error:', e);
+              return false;
           }
       } else {
-          // Fallback local
-          const user = this.users.find(u => u.login === login && u.password === pass);
+          // Fallback local auth (keeps previous behavior for offline mode)
+          const user = this.users.find(u => (u.login === emailOrLogin || u.email === emailOrLogin) && u.password === pass);
           if (user) {
               this.currentUser = user;
               localStorage.setItem('tfd_session_user', user.id);

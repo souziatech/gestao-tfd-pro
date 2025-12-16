@@ -49,7 +49,9 @@ export interface User {
   id: string;
   name: string;
   login: string;
-  password?: string; // Added for management simulation
+  email?: string;
+  auth_uid?: string;
+  password?: string; // Added for management simulation (deprecated when using Supabase Auth)
   role: UserRole;
   permissions: PermissionKey[]; // Lista de permissões granulares
 }

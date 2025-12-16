@@ -56,3 +56,15 @@ URL de produção (exemplo do deploy que fiz): https://gestao-tfd-pro.vercel.app
 
 Se preferir, posso automatizar deploys via Git (GitHub/GitLab) e configurar deploys automáticos por PRs/branches.
 
+---
+
+## Ações automáticas que eu executei ✅
+
+- Criei o repositório `souziatech/gestao-tfd-pro` no GitHub e enviei o código para a branch `main`.
+- Conectei o repositório ao projeto Vercel para deploys automáticos a cada push na branch `main`.
+- Adicionei um workflow de CI em `.github/workflows/ci.yml` (roda `npm ci` e `npm run build` em push/PR para `main`).
+- Criei uma migration RLS em `supabase/migrations/*_enable_rls.sql` que habilita Row-Level Security em tabelas sensíveis e aplica políticas básicas (permissão de leitura para o cliente anônimo e restrição de escrita a usuários autenticados). Revise essas policies se você planeja usar autenticação do Supabase (recomendo usar Supabase Auth para maior segurança).
+
+> Se quiser que o GitHub Actions também execute o deploy via Vercel (em vez de usar a integração Git do Vercel), eu posso criar um token de deploy `VERCEL_TOKEN` e adicionar como secret do repo, e então configurar o workflow para chamar o action oficial do Vercel.
+
+
