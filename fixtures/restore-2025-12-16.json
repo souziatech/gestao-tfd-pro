@@ -1,0 +1,770 @@
+{
+  "institution": {
+    "name": "PREFEITURA MUNICIPAL DE COROATÁ",
+    "subtitle": "SECRETARIA MUNICIPAL DE SAÚDE - TFD",
+    "address": "Av. Magalhães de Almeida, S/N",
+    "city": "Coroatá",
+    "state": "MA",
+    "phone": "(99) 3641-1122",
+    "email": "tfd@coroata.ma.gov.br",
+    "logo": ""
+  },
+  "patients": [
+    {
+      "id": "p1",
+      "name": "ANTÔNIO RAIMUNDO SILVA",
+      "cpf": "123.111.222-33",
+      "birthDate": "1955-05-20",
+      "susCard": "700000000000001",
+      "phone": "(99) 98111-0001",
+      "status": "active",
+      "isTFD": true,
+      "address": "Rua do Sol, 45",
+      "neighborhood": "Centro",
+      "city": "Coroatá",
+      "referencePoint": "Perto do Banco do Brasil",
+      "emergencyContact": "Maria (Esposa)",
+      "medicalNotes": "Hemodiálise crônica. Cadeira de rodas.",
+      "allowsCompanion": true,
+      "companionName": "MARIA SILVA",
+      "companionCPF": "987.654.321-00",
+      "allowsSecondCompanion": false
+    },
+    {
+      "id": "p2",
+      "name": "JOSEFA PEREIRA SANTOS",
+      "cpf": "222.333.444-55",
+      "birthDate": "1960-08-15",
+      "susCard": "700000000000002",
+      "phone": "(99) 98222-0002",
+      "status": "active",
+      "isTFD": true,
+      "address": "Av. Central, 100",
+      "neighborhood": "Americanos",
+      "city": "Coroatá",
+      "referencePoint": "Prox. Escola",
+      "emergencyContact": "Pedro (Filho)",
+      "medicalNotes": "Hemodiálise. Hipertensa.",
+      "allowsCompanion": false
+    },
+    {
+      "id": "p3",
+      "name": "CARLOS ALBERTO COSTA",
+      "cpf": "333.444.555-66",
+      "birthDate": "1972-01-10",
+      "susCard": "700000000000003",
+      "phone": "(99) 98333-0003",
+      "status": "active",
+      "isTFD": true,
+      "address": "Rua Nova, 88",
+      "neighborhood": "Trizidela",
+      "city": "Coroatá",
+      "referencePoint": "Bar do Zé",
+      "emergencyContact": "Clara (Irmã)",
+      "medicalNotes": "Hemodiálise.",
+      "allowsCompanion": false
+    },
+    {
+      "id": "p4",
+      "name": "LUCAS GABRIEL (CRIANÇA)",
+      "cpf": "055.666.777-88",
+      "birthDate": "2019-03-25",
+      "susCard": "700000000000004",
+      "phone": "(99) 98444-0004",
+      "status": "active",
+      "isTFD": true,
+      "address": "Tv. da Paz, 12",
+      "neighborhood": "Mocó",
+      "city": "Coroatá",
+      "referencePoint": "",
+      "emergencyContact": "Ana Paula (Mãe)",
+      "medicalNotes": "Leucemia. Tratamento no Aldenora Bello.",
+      "allowsCompanion": true,
+      "companionName": "ANA PAULA SOUZA (MÃE)",
+      "companionCPF": "000.000.000-11",
+      "allowsSecondCompanion": true,
+      "secondCompanionName": "JOSÉ SOUZA (PAI)",
+      "secondCompanionCPF": "000.000.000-22",
+      "secondCompanionJustification": "Laudo social: necessidade de suporte físico e emocional para a criança."
+    },
+    {
+      "id": "p5",
+      "name": "RAIMUNDA NONATA LIMA",
+      "cpf": "999.888.777-66",
+      "birthDate": "1948-12-01",
+      "susCard": "700000000000005",
+      "phone": "(99) 98555-0005",
+      "status": "active",
+      "isTFD": true,
+      "address": "Rua das Flores, 230",
+      "neighborhood": "Centro",
+      "city": "Coroatá",
+      "referencePoint": "Mercado Municipal",
+      "emergencyContact": "Neto (Sobrinho)",
+      "medicalNotes": "Ca. Mama. Radioterapia.",
+      "allowsCompanion": true,
+      "companionName": "RITA LIMA"
+    },
+    {
+      "id": "p6",
+      "name": "FRANCISCO DAS CHAGAS",
+      "cpf": "777.111.222-33",
+      "birthDate": "1985-06-30",
+      "susCard": "700000000000006",
+      "phone": "(99) 98666-0006",
+      "status": "active",
+      "isTFD": true,
+      "address": "Rua do Arame, 50",
+      "neighborhood": "Trizidela",
+      "city": "Coroatá",
+      "referencePoint": "",
+      "emergencyContact": "Socorro (Mãe)",
+      "medicalNotes": "Fratura de Fêmur. Retorno pós-cirúrgico.",
+      "allowsCompanion": true,
+      "companionName": "SOCORRO CHAGAS"
+    },
+    {
+      "id": "p7",
+      "name": "MARIA JOSÉ OLIVEIRA",
+      "cpf": "888.222.111-44",
+      "birthDate": "1950-02-14",
+      "susCard": "700000000000007",
+      "phone": "(99) 98777-0007",
+      "status": "active",
+      "isTFD": true,
+      "address": "Av. Perimetral, 500",
+      "neighborhood": "Americanos",
+      "city": "Coroatá",
+      "referencePoint": "",
+      "emergencyContact": "Carlos (Filho)",
+      "medicalNotes": "Catarata.",
+      "allowsCompanion": true,
+      "companionName": "CARLOS OLIVEIRA"
+    },
+    {
+      "id": "p8",
+      "name": "JOÃO MOTORISTA (SERVIDOR)",
+      "cpf": "000.000.000-99",
+      "birthDate": "1980-01-01",
+      "susCard": "",
+      "phone": "(99) 99999-9999",
+      "status": "active",
+      "isTFD": false,
+      "address": "Secretaria de Saúde",
+      "neighborhood": "Centro",
+      "city": "Coroatá",
+      "referencePoint": "",
+      "emergencyContact": "",
+      "medicalNotes": "",
+      "allowsCompanion": false
+    },
+    {
+      "id": "p9",
+      "name": "TEREZA CRISTINA",
+      "cpf": "111.555.999-77",
+      "birthDate": "1990-10-10",
+      "susCard": "700000000000009",
+      "phone": "(99) 98888-1234",
+      "status": "inactive",
+      "isTFD": true,
+      "address": "Rua da Palmeira",
+      "neighborhood": "Mocó",
+      "city": "Coroatá",
+      "referencePoint": "",
+      "emergencyContact": "",
+      "medicalNotes": "Alta médica.",
+      "allowsCompanion": false
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "v1",
+      "model": "Van Renault Master",
+      "plate": "PTA-2024",
+      "capacity": 15,
+      "status": "active"
+    },
+    {
+      "id": "v2",
+      "model": "Micro-ônibus Volare",
+      "plate": "COR-5050",
+      "capacity": 26,
+      "status": "active"
+    },
+    {
+      "id": "v3",
+      "model": "Fiat Spin",
+      "plate": "OAB-1234",
+      "capacity": 6,
+      "status": "active"
+    },
+    {
+      "id": "v4",
+      "model": "Ambulância UTI",
+      "plate": "SAMU-192",
+      "capacity": 2,
+      "status": "maintenance"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "d1",
+      "name": "SEU ZÉ (JOSÉ ALMEIDA)",
+      "document": "12345",
+      "cnh": "11111111111",
+      "phone": "(99) 99111-1111",
+      "active": true
+    },
+    {
+      "id": "d2",
+      "name": "DONA LÚCIA",
+      "document": "67890",
+      "cnh": "22222222222",
+      "phone": "(99) 99222-2222",
+      "active": true
+    },
+    {
+      "id": "d3",
+      "name": "ROBERTO CARLOS",
+      "document": "54321",
+      "cnh": "33333333333",
+      "phone": "(99) 99333-3333",
+      "active": true
+    }
+  ],
+  "treatmentTypes": [
+    {
+      "id": "1",
+      "name": "Hemodiálise",
+      "specialistName": "Dr. Marcelo (Nefrologista)",
+      "notes": "Sessões Ter/Qui/Sáb",
+      "defaultDestinationId": "2"
+    },
+    {
+      "id": "2",
+      "name": "Oncologia",
+      "specialistName": "Dr. Tarquínio",
+      "notes": "Quimioterapia e Radioterapia",
+      "defaultDestinationId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Ortopedia",
+      "specialistName": "Dr. Osmar",
+      "notes": "Cirurgias Eletivas",
+      "defaultDestinationId": "4"
+    },
+    {
+      "id": "4",
+      "name": "Oftalmologia",
+      "specialistName": "Dr. Carlos (Cirurgião)",
+      "notes": "Mutirão da Catarata",
+      "defaultDestinationId": "3"
+    },
+    {
+      "id": "5",
+      "name": "Neuropediatria",
+      "specialistName": "Dra. Juliana",
+      "notes": "Avaliação de desenvolvimento",
+      "defaultDestinationId": "5"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "1",
+      "name": "Hospital do Câncer Aldenora Bello",
+      "address": "São Luís - Monte Castelo",
+      "phone": "(98) 3000-0000"
+    },
+    {
+      "id": "2",
+      "name": "Clínica de Nefrologia de Caxias",
+      "address": "Caxias - Centro",
+      "phone": "(99) 3500-0000"
+    },
+    {
+      "id": "3",
+      "name": "HGM - Hospital Geral Municipal",
+      "address": "Codó - Centro",
+      "phone": "(99) 3661-0000"
+    },
+    {
+      "id": "4",
+      "name": "HGT - Hospital Geral de Timbiras",
+      "address": "Timbiras - Centro",
+      "phone": "(99) 3668-1000"
+    },
+    {
+      "id": "5",
+      "name": "Casa de Apoio Ninar",
+      "address": "São Luís - Ponta d'Areia",
+      "phone": "(98) 3200-0000"
+    },
+    {
+      "id": "6",
+      "name": "H. Macrorregional de Coroatá",
+      "address": "Coroatá - MA",
+      "phone": "(99) 3641-0000"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Administrador TFD",
+      "login": "admin",
+      "role": "ADMIN",
+      "password": "123",
+      "permissions": [
+        "view_dashboard",
+        "view_patients",
+        "manage_patients",
+        "view_appointments",
+        "manage_appointments",
+        "view_trips",
+        "manage_trips",
+        "view_stays",
+        "manage_stays",
+        "view_financial",
+        "manage_financial",
+        "view_resources",
+        "manage_resources",
+        "view_reports"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Atendente Regulação",
+      "login": "atendente",
+      "role": "ATTENDANT",
+      "password": "123",
+      "permissions": [
+        "view_dashboard",
+        "view_patients",
+        "manage_patients",
+        "view_appointments",
+        "manage_appointments",
+        "view_trips",
+        "manage_trips",
+        "view_stays",
+        "manage_stays",
+        "view_resources",
+        "manage_resources",
+        "view_reports"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Motorista Plantão",
+      "login": "motorista",
+      "role": "DRIVER",
+      "password": "123",
+      "permissions": [
+        "view_trips"
+      ]
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip_caxias_today",
+      "date": "2025-12-16",
+      "time": "04:30",
+      "origin": "Secretaria de Saúde",
+      "destination": "Caxias (Clínica Renal)",
+      "treatmentId": "1",
+      "treatmentName": "Hemodiálise",
+      "vehicleId": "v1",
+      "vehicleModel": "Van Renault Master",
+      "vehiclePlate": "PTA-2024",
+      "driverId": "d1",
+      "driverName": "SEU ZÉ (JOSÉ ALMEIDA)",
+      "totalSeats": 15,
+      "occupiedSeats": 4,
+      "status": "Embarque",
+      "notes": "Pacientes de rotina.",
+      "accountabilityStatus": "pending",
+      "extraExpenses": [],
+      "passengers": [
+        {
+          "id": "t1_p1",
+          "tripId": "trip_caxias_today",
+          "patientId": "p1",
+          "patientName": "ANTÔNIO RAIMUNDO SILVA",
+          "isCompanion": false,
+          "status": "boarded",
+          "origin": "Centro",
+          "destination": "Clínica de Nefrologia",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t1_p1_c",
+          "tripId": "trip_caxias_today",
+          "patientId": "p1",
+          "patientName": "MARIA SILVA",
+          "isCompanion": true,
+          "relatedPatientId": "p1",
+          "relatedPatientName": "ANTÔNIO RAIMUNDO",
+          "status": "boarded",
+          "origin": "Centro",
+          "destination": "Clínica de Nefrologia",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t1_p2",
+          "tripId": "trip_caxias_today",
+          "patientId": "p2",
+          "patientName": "JOSEFA PEREIRA SANTOS",
+          "isCompanion": false,
+          "status": "boarded",
+          "origin": "Americanos",
+          "destination": "Clínica de Nefrologia",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t1_p3",
+          "tripId": "trip_caxias_today",
+          "patientId": "p3",
+          "patientName": "CARLOS ALBERTO COSTA",
+          "isCompanion": false,
+          "status": "missing",
+          "origin": "Trizidela",
+          "destination": "Clínica de Nefrologia",
+          "isRoundTrip": true
+        }
+      ]
+    },
+    {
+      "id": "trip_slz_tomorrow",
+      "date": "2025-12-17",
+      "time": "03:00",
+      "origin": "Praça da Matriz",
+      "destination": "São Luís (Hospitais)",
+      "treatmentId": "2",
+      "treatmentName": "Oncologia/Vários",
+      "vehicleId": "v2",
+      "vehicleModel": "Micro-ônibus Volare",
+      "vehiclePlate": "COR-5050",
+      "driverId": "d3",
+      "driverName": "ROBERTO CARLOS",
+      "totalSeats": 26,
+      "occupiedSeats": 5,
+      "status": "Agendada",
+      "notes": "Levar documentos para regulação estadual.",
+      "accountabilityStatus": "pending",
+      "extraExpenses": [],
+      "passengers": [
+        {
+          "id": "t2_p4",
+          "tripId": "trip_slz_tomorrow",
+          "patientId": "p4",
+          "patientName": "LUCAS GABRIEL (CRIANÇA)",
+          "isCompanion": false,
+          "status": "confirmed",
+          "origin": "Mocó",
+          "destination": "H. Aldenora Bello",
+          "isRoundTrip": false
+        },
+        {
+          "id": "t2_p4_c1",
+          "tripId": "trip_slz_tomorrow",
+          "patientId": "p4",
+          "patientName": "ANA PAULA (MÃE)",
+          "isCompanion": true,
+          "relatedPatientId": "p4",
+          "relatedPatientName": "LUCAS GABRIEL",
+          "status": "confirmed",
+          "origin": "Mocó",
+          "destination": "H. Aldenora Bello",
+          "isRoundTrip": false
+        },
+        {
+          "id": "t2_p4_c2",
+          "tripId": "trip_slz_tomorrow",
+          "patientId": "p4",
+          "patientName": "JOSÉ SOUZA (PAI)",
+          "isCompanion": true,
+          "relatedPatientId": "p4",
+          "relatedPatientName": "LUCAS GABRIEL",
+          "status": "confirmed",
+          "origin": "Mocó",
+          "destination": "H. Aldenora Bello",
+          "isRoundTrip": false
+        },
+        {
+          "id": "t2_p5",
+          "tripId": "trip_slz_tomorrow",
+          "patientId": "p5",
+          "patientName": "RAIMUNDA NONATA LIMA",
+          "isCompanion": false,
+          "status": "confirmed",
+          "origin": "Centro",
+          "destination": "H. Aldenora Bello",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t2_p5_c",
+          "tripId": "trip_slz_tomorrow",
+          "patientId": "p5",
+          "patientName": "RITA LIMA",
+          "isCompanion": true,
+          "relatedPatientId": "p5",
+          "relatedPatientName": "RAIMUNDA NONATA",
+          "status": "confirmed",
+          "origin": "Centro",
+          "destination": "H. Aldenora Bello",
+          "isRoundTrip": true
+        }
+      ]
+    },
+    {
+      "id": "trip_codo_yesterday",
+      "date": "2025-12-15",
+      "time": "07:00",
+      "origin": "Secretaria",
+      "destination": "Codó (HGM)",
+      "treatmentId": "4",
+      "treatmentName": "Oftalmologia",
+      "vehicleId": "v3",
+      "vehicleModel": "Fiat Spin",
+      "vehiclePlate": "OAB-1234",
+      "driverId": "d2",
+      "driverName": "DONA LÚCIA",
+      "totalSeats": 6,
+      "occupiedSeats": 2,
+      "status": "Concluída",
+      "notes": "Estrada com buracos na MA-020.",
+      "accountabilityStatus": "approved",
+      "extraExpenses": [
+        {
+          "id": "ex1",
+          "description": "Abastecimento",
+          "amount": 150,
+          "type": "fuel",
+          "date": "2025-12-15",
+          "status": "approved"
+        }
+      ],
+      "passengers": [
+        {
+          "id": "t3_p7",
+          "tripId": "trip_codo_yesterday",
+          "patientId": "p7",
+          "patientName": "MARIA JOSÉ OLIVEIRA",
+          "isCompanion": false,
+          "status": "boarded",
+          "origin": "Americanos",
+          "destination": "HGM Codó",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t3_p7_c",
+          "tripId": "trip_codo_yesterday",
+          "patientId": "p7",
+          "patientName": "CARLOS OLIVEIRA",
+          "isCompanion": true,
+          "relatedPatientId": "p7",
+          "relatedPatientName": "MARIA JOSÉ",
+          "status": "boarded",
+          "origin": "Americanos",
+          "destination": "HGM Codó",
+          "isRoundTrip": true
+        }
+      ]
+    },
+    {
+      "id": "trip_timbiras_next",
+      "date": "2025-12-23",
+      "time": "06:00",
+      "origin": "Secretaria",
+      "destination": "Timbiras (HGT)",
+      "treatmentId": "3",
+      "treatmentName": "Ortopedia",
+      "vehicleId": "v3",
+      "vehicleModel": "Fiat Spin",
+      "vehiclePlate": "OAB-1234",
+      "driverId": "d2",
+      "driverName": "DONA LÚCIA",
+      "totalSeats": 6,
+      "occupiedSeats": 2,
+      "status": "Agendada",
+      "notes": "Retorno Dr. Osmar",
+      "accountabilityStatus": "pending",
+      "extraExpenses": [],
+      "passengers": [
+        {
+          "id": "t4_p6",
+          "tripId": "trip_timbiras_next",
+          "patientId": "p6",
+          "patientName": "FRANCISCO DAS CHAGAS",
+          "isCompanion": false,
+          "status": "confirmed",
+          "origin": "Trizidela",
+          "destination": "HGT",
+          "isRoundTrip": true
+        },
+        {
+          "id": "t4_p6_c",
+          "tripId": "trip_timbiras_next",
+          "patientId": "p6",
+          "patientName": "SOCORRO CHAGAS",
+          "isCompanion": true,
+          "relatedPatientId": "p6",
+          "relatedPatientName": "FRANCISCO",
+          "status": "confirmed",
+          "origin": "Trizidela",
+          "destination": "HGT",
+          "isRoundTrip": true
+        }
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "id": "a1",
+      "patientId": "p1",
+      "patientName": "ANTÔNIO RAIMUNDO SILVA",
+      "treatmentId": "1",
+      "treatmentName": "Hemodiálise",
+      "destinationId": "2",
+      "destinationName": "Clínica de Nefrologia de Caxias",
+      "date": "2025-12-16",
+      "time": "08:00",
+      "notes": "Sessão 1",
+      "status": "scheduled_trip",
+      "tripId": "trip_caxias_today",
+      "isReturn": false
+    },
+    {
+      "id": "a2",
+      "patientId": "p2",
+      "patientName": "JOSEFA PEREIRA SANTOS",
+      "treatmentId": "1",
+      "treatmentName": "Hemodiálise",
+      "destinationId": "2",
+      "destinationName": "Clínica de Nefrologia de Caxias",
+      "date": "2025-12-16",
+      "time": "08:30",
+      "notes": "",
+      "status": "scheduled_trip",
+      "tripId": "trip_caxias_today",
+      "isReturn": false
+    },
+    {
+      "id": "a3",
+      "patientId": "p4",
+      "patientName": "LUCAS GABRIEL",
+      "treatmentId": "2",
+      "treatmentName": "Oncologia",
+      "destinationId": "1",
+      "destinationName": "Hospital Aldenora Bello",
+      "date": "2025-12-17",
+      "time": "09:00",
+      "notes": "Quimioterapia e Exames",
+      "status": "scheduled_trip",
+      "tripId": "trip_slz_tomorrow",
+      "isReturn": false
+    },
+    {
+      "id": "a4",
+      "patientId": "p5",
+      "patientName": "RAIMUNDA NONATA LIMA",
+      "treatmentId": "2",
+      "treatmentName": "Oncologia",
+      "destinationId": "1",
+      "destinationName": "Hospital Aldenora Bello",
+      "date": "2025-12-17",
+      "time": "10:00",
+      "notes": "Consulta Dr. Tarquínio",
+      "status": "scheduled_trip",
+      "tripId": "trip_slz_tomorrow",
+      "isReturn": false
+    },
+    {
+      "id": "a5",
+      "patientId": "p4",
+      "patientName": "LUCAS GABRIEL",
+      "treatmentId": "5",
+      "treatmentName": "Neuropediatria",
+      "destinationId": "5",
+      "destinationName": "Casa de Apoio Ninar",
+      "date": "2025-12-18",
+      "time": "14:00",
+      "notes": "Avaliação",
+      "status": "pending",
+      "isReturn": false
+    },
+    {
+      "id": "a6",
+      "patientId": "p7",
+      "patientName": "MARIA JOSé OLIVEIRA",
+      "treatmentId": "4",
+      "treatmentName": "Oftalmologia",
+      "destinationId": "3",
+      "destinationName": "HGM Codó",
+      "date": "2025-12-15",
+      "time": "08:00",
+      "notes": "Cirurgia realizada",
+      "status": "completed",
+      "tripId": "trip_codo_yesterday",
+      "isReturn": false
+    }
+  ],
+  "patientPayments": [
+    {
+      "id": "pay1",
+      "patientId": "p4",
+      "patientName": "LUCAS GABRIEL",
+      "cpf": "055.666.777-88",
+      "date": "2025-12-17",
+      "hospital": "H. Aldenora Bello",
+      "specialty": "Oncologia",
+      "accountHolder": "ANA PAULA SOUZA (MÃE)",
+      "holderCPF": "000.000.000-11",
+      "bankName": "BB",
+      "agency": "1111",
+      "accountNumber": "22222",
+      "hasCompanion": true,
+      "mealValue": 20,
+      "companionValue": 40,
+      "tripQty": 1,
+      "totalValue": 60,
+      "referenceMonth": "11",
+      "referenceYear": "2024",
+      "status": "pending"
+    }
+  ],
+  "supportHouses": [
+    {
+      "id": "1",
+      "name": "Casa de Apoio Coroatá em SLZ",
+      "address": "Rua das Mangueiras, Renascença, São Luís",
+      "phone": "(98) 3232-1010",
+      "dailyCost": 65,
+      "capacity": 25
+    },
+    {
+      "id": "2",
+      "name": "Pousada do Rim (Caxias)",
+      "address": "Av. Volta Redonda, Caxias",
+      "phone": "(99) 3521-2020",
+      "dailyCost": 40,
+      "capacity": 15
+    }
+  ],
+  "patientStays": [
+    {
+      "id": "s1",
+      "patientId": "p4",
+      "patientName": "LUCAS GABRIEL",
+      "supportHouseId": "1",
+      "supportHouseName": "Casa de Apoio Coroatá em SLZ",
+      "entryDate": "2025-12-17",
+      "entryTime": "07:00",
+      "expectedExitDate": "2025-12-18",
+      "hasCompanion": true,
+      "companionName": "ANA PAULA + JOSÉ",
+      "notes": "Ficarão até terminar os exames.",
+      "status": "active"
+    }
+  ],
+  "exportDate": "2025-12-16T21:57:34.810Z"
+}

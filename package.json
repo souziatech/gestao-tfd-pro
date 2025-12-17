@@ -8,7 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "db:push": "prisma db push",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "export-db": "node scripts/export-db.mjs",
+    "generate-import-migration": "node scripts/generate-import-migration.mjs",
+    "import-db": "node scripts/import-data.mjs"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
