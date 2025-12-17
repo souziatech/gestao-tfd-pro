@@ -69,7 +69,7 @@ export const AppointmentManager: React.FC = () => {
       if (hasSearched) handleSearch();
   };
 
-  const handleSave = async () => {
+  const handleSave = () => {
     if (!formData.patientId || !formData.date) {
         alert("Paciente e Data são obrigatórios.");
         return;
@@ -116,7 +116,7 @@ export const AppointmentManager: React.FC = () => {
 
            if (existingAppt.status === 'scheduled_trip' && existingAppt.tripId && formData.date !== existingAppt.date) {
                if (confirm(`A data da consulta foi alterada de ${formatDate(existingAppt.date)} para ${formatDate(formData.date || '')}. \n\nIsto irá remover o passageiro da viagem agendada. Deseja continuar?`)) {
-                   await db.updateAppointmentStatus(existingAppt.id, 'pending');
+                   db.updateAppointmentStatus(existingAppt.id, 'pending');
                    formData.status = 'pending';
                    formData.tripId = undefined;
                } else {
@@ -126,26 +126,32 @@ export const AppointmentManager: React.FC = () => {
 
            if (formData.status === 'scheduled_trip' && formData.tripId && (!existingAppt.tripId || existingAppt.tripId !== formData.tripId)) {
                try {
-                  await db.assignAppointmentToTrip(formData.id, formData.tripId);
+                  db.assignAppointmentToTrip(formData.id, formData.tripId);
                } catch (e: any) {
                    alert(e.message);
                    return;
                }
            }
            
-           const updatedAppt = {
-               ...existingAppt,
-               ...formData,
-               ...commonData
-           } as Appointment;
-
            if ((formData.status === 'cancelled' || formData.status === 'missed') && formData.tripId) {
-               await db.updateAppointmentStatus(formData.id, formData.status);
-               // If cancelling, ensure we update trip link removal in object
-               updatedAppt.tripId = undefined;
+               db.updateAppointmentStatus(formData.id, formData.status);
+               const updated = db.appointments.find(a => a.id === formData.id);
+               if (updated) {
+                   Object.assign(updated, {
+                       ...formData,
+                       tripId: undefined,
+                       ...commonData
+                   });
+                   db.save();
+               }
+           } else {
+               db.appointments[idx] = { 
+                   ...db.appointments[idx], 
+                   ...formData,
+                   ...commonData
+                } as Appointment;
+                db.save();
            }
-           
-           await db.updateAppointment(updatedAppt);
        }
     } else {
        const newApp: Appointment = {
@@ -163,7 +169,8 @@ export const AppointmentManager: React.FC = () => {
            status: 'pending',
            isReturn: formData.isReturn || false
        };
-       await db.addAppointment(newApp);
+       db.appointments.push(newApp);
+       db.save();
     }
     notify('Agendamento salvo com sucesso!', 'success');
     refresh();
@@ -171,7 +178,7 @@ export const AppointmentManager: React.FC = () => {
     setFormData({});
   };
 
-  const updateStatus = async (id: string, newStatus: string) => {
+  const updateStatus = (id: string, newStatus: string) => {
       const appt = db.appointments.find(a => a.id === id);
       if (!appt) return;
 
@@ -188,7 +195,7 @@ export const AppointmentManager: React.FC = () => {
       }
 
       try {
-        await db.updateAppointmentStatus(id, newStatus as any);
+        db.updateAppointmentStatus(id, newStatus as any);
         refresh();
         if (newStatus === 'cancelled') notify('Consulta cancelada.', 'warning');
         else if (newStatus === 'missed') notify('Consulta marcada como FALTOU.', 'error');
@@ -198,10 +205,10 @@ export const AppointmentManager: React.FC = () => {
       }
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = (id: string) => {
       if (confirm("Tem certeza que deseja excluir esta consulta? Se estiver vinculada a uma viagem, o passageiro será removido.")) {
           try {
-              await db.deleteAppointment(id);
+              db.deleteAppointment(id);
               refresh();
               notify('Consulta excluída com sucesso.', 'success');
           } catch (e: any) {
@@ -257,7 +264,7 @@ export const AppointmentManager: React.FC = () => {
       return db.trips.filter(t => t.date === formData.date);
   }, [formData.date, db.trips]);
 
-  const handleCreateTripClick = async () => {
+  const handleCreateTripClick = () => {
     if (formData.patientId && formData.date && (formData.treatmentId || formData.destinationId)) {
         const tempAppt = {
             ...formData,
@@ -270,7 +277,8 @@ export const AppointmentManager: React.FC = () => {
         if (!formData.id) {
             const newId = Date.now().toString();
             const newApp = { ...tempAppt, id: newId, status: 'pending' as const };
-            await db.addAppointment(newApp);
+            db.appointments.push(newApp);
+            db.save();
             setPendingAppointmentForTrip(newApp);
         } else {
             setPendingAppointmentForTrip(tempAppt);
